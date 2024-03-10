@@ -29,27 +29,27 @@ Al hacer click en el botón Guardar, llama a esta misma página: edit.php-->
 	<form action="edit.php" method="post">
 		<div>
 			<label for="marca">Marca</label>
-			<input type="text" name="marca" id="marca" placeholder="Marca" required>
+			<input type="text" name="marca" id="marca" value="<?php echo $marca;?>" required>
 		</div>
 
 		<div>
 			<label for="tipo_prenda">Tipo de prenda</label>
-			<input type="text" name="tipo_prenda" id="tipo_prenda" placeholder="Tipo de prenda" required>
+			<input type="text" name="tipo_prenda" id="tipo_prenda" value="<?php echo $tipo_prenda;?>" required>
 		</div>
 
 		<div>
 			<label for="en_stock">Stock</label>
-			<input type="number" name="en_stock" id="en_stock" placeholder="Stock" required>
+			<input type="number" name="en_stock" id="en_stock" value="<?php echo $en_stock;?>" required>
 		</div>
 
 		<div>
 			<label for="precio">Precio</label>
-			<input type="number" name="precio" id="precio" placeholder="Precio" required>
+			<input type="number" name="precio" id="precio" value="<?php echo $precio;?>" required>
 		</div>
 
 		<div>
 			<label for="material_reciclado">Reciclado o NO</label>
-			<input type="text" name="material_reciclado" id="material_reciclado" placeholder="Reciclado o NO" required>
+			<input type="text" name="material_reciclado" id="material_reciclado" value="<?php echo $material_reciclado;?>" required>
 		</div>
 
 		<div >
