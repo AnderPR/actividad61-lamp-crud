@@ -72,7 +72,7 @@ mysqli_stmt_bind_param($stmt, "i", $id);
 //Ejecuta una consulta preparada
 mysqli_stmt_execute($stmt);
 //Enlaza variables a una setencia preparada para el almacenamiento del resultado
-mysqli_stmt_bind_result($stmt, $marca, $tipo_prenda, $en_stock, ,$precio, $material_reciclado);
+mysqli_stmt_bind_result($stmt, $marca, $tipo_prenda, $en_stock, $precio, $material_reciclado);
 //Obtiene el resultado de una sentencia SQL preparada en las variables enlazadas
 mysqli_stmt_fetch($stmt);
 //Libera la memoria donde se almacenó el resultado		
@@ -82,3 +82,71 @@ mysqli_stmt_close($stmt);
 //Cierra la conexión de base de datos previamente abierta
 mysqli_close($mysqli);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Modificación material</title>
+<!--	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+-->
+</head>
+
+<body>
+<!--	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+-->
+<div>
+	<header>
+		<h1>Panel de Control</h1>
+	</header>
+	
+	<main>				
+	<ul>
+		<li><a href="index.php" >Inicio</a></li>
+		<li><a href="add.html" >Alta</a></li>
+	</ul>
+	<h2>Modificación material</h2>
+<!--Formulario de edición. 
+Al hacer click en el botón Guardar, llama a esta misma página: edit.php-->
+	<form action="edit.php" method="post">
+		<div>
+			<label for="marca">Marca</label>
+			<input type="text" name="marca" id="marca" value="<?php echo $marca;?>" required>
+		</div>
+
+		<div>
+			<label for="tipo_prenda">Tipo de prenda</label>
+			<input type="text" name="tipo_prenda" id="tipo_prenda" value="<?php echo $tipo_prenda;?>" required>
+		</div>
+
+		<div>
+			<label for="en_stock">Stock</label>
+			<input type="number" name="en_stock" id="en_stock" value="<?php echo $en_stock;?>" required>
+		</div>
+
+		<div>
+			<label for="precio">Precio</label>
+			<input type="number" name="precio" id="precio" value="<?php echo $precio;?>" required>
+		</div>
+
+		<div>
+			<label for="material_reciclado">Reciclado o NO</label>
+			<input type="text" name="material_reciclado" id="material_reciclado" value="<?php echo $material_reciclado;?>" required>
+		</div>
+
+		<div >
+			<input type="hidden" name="id" value="<?php echo $id;?>">
+			<input type="submit" name="modifica" value="Guardar">
+			<input type="button" value="Cancelar" onclick="location.href='index.php'">
+		</div>
+	</form>
+
+	</main>	
+	<footer>
+	Created by the IES Miguel Herrero team &copy; 2024
+  	</footer>
+</div>
+</body>
+</html>

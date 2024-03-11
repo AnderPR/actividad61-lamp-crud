@@ -74,7 +74,7 @@ $res["age"] = "23";
 		echo "<td>".$res['material_reciclado']."</td>\n";
 		echo "<td>";
 //En la última columna se añader dos enlaces para editar y modificar el registro correspondiente. Se le pasa por el método GET el id del registro		
-		echo "<a href=\"edit.html?id=$res[id]\">Editar</a>\n";
+		echo "<a href=\"edit.php?id=$res[id]\">Editar</a>\n";
 		echo "<a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('¿Está segur@ que desea eliminar el registro?')\" >Eliminar</a></td>\n";
 		echo "</td>";
 		echo "</tr>\n";
