@@ -69,7 +69,7 @@ Los caracteres codificados son NUL (ASCII 0), \n, \r, \, ', ", y Control-Z.*/
 	else 
 	{
 //Prepara una sentencia SQL para su ejecución. En este caso el alta de un registro de la BD.		
-		$stmt = mysqli_prepare($mysqli, "INSERT INTO MaterialTrailRunning (marca,tipo_prenda,en_stock,precio,material_reciclado) VALUES(?,?,?)");
+		$stmt = mysqli_prepare($mysqli, "INSERT INTO MaterialTrailRunning (marca,tipo_prenda,en_stock,precio,material_reciclado) VALUES(?,?,?,?,?)");
 /*Enlaza variables como parámetros a una setencia preparada. 
 i: La variable correspondiente tiene tipo entero
 d: La variable correspondiente tiene tipo doble
